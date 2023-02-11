@@ -1,0 +1,43 @@
+       >>SOURCE FORMAT FREE
+IDENTIFICATION DIVISION.
+PROGRAM-ID. math.
+AUTHOR. Florian Muellner.
+DATE-WRITTEN.  11/02/2023.
+DATE-COMPILED. 11/02/2023.
+ENVIRONMENT DIVISION.
+DATA DIVISION.
+FILE SECTION.
+WORKING-STORAGE SECTION.
+01 Num1 PIC 9 VALUE 5.
+01 Num2 PIC 9 VALUE 4.
+01 Num3 PIC 9 VALUE 3.
+01 Result PIC S9V99 VALUE 0.
+01 REM PIC 9V99.
+PROCEDURE DIVISION.
+ADD Num1 TO Num2 GIVING Result
+DISPLAY "Num1: " Num1 " + " Num2 " = " Result
+SUBTRACT Num1 FROM Num2 GIVING Result
+DISPLAY "Num1: " Num1 " - " Num2 " = " Result
+MULTIPLY Num1 BY Num2 GIVING Result
+DISPLAY "Num1: " Num1 " * " Num2 " = " Result
+DIVIDE Num1 INTO Num2 GIVING Result
+DISPLAY "Num1: " Num1 " / " Num2 " = " Result
+DIVIDE Num1 INTO Num2 GIVING Result REMAINDER REM
+DISPLAY "Num1: " Num1 " / " Num2 " = " Result " and remainder: " REM
+
+ADD Num1, Num2 TO Num3 GIVING Result
+ADD Num1, Num2, Num3 GIVING Result
+DISPLAY Result
+COMPUTE Result = Num1 + Num2
+DISPLAY Result
+COMPUTE Result = Num1 - Num2
+COMPUTE Result = Num1 / Num2
+COMPUTE Result = Num1 * Num2
+COMPUTE Result = Num1 ** 2
+DISPLAY Result
+COMPUTE Result = (3 + 5) * 6
+DISPLAY Result
+COMPUTE Result ROUNDED = 3.0 + 2.006
+DISPLAY "Rounded and compute: " Result
+
+STOP RUN.
